@@ -42,9 +42,10 @@ set ttimeoutlen=50
 "Use vim-airline with devicons
 let g:airline_powerline_fonts=1
 
-"Enable HTML Autocompletion
+"Enable omnicomplete and set ctrl+space key binding
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+imap <c-space> <c-x><c-o>
 
 "Enable syntax highlighting for JSDocs
 let g:javascript_plugin_jsdoc = 1
@@ -57,3 +58,6 @@ map <C-n> :NERDTreeToggle<CR>
 
 "Reduce gitgutter's update time
 set updatetime=250
+
+"Key bindings for ":Unite file" to <Leader>f
+nnoremap <Leader>f :Unite file<CR>
