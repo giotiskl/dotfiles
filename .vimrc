@@ -20,11 +20,6 @@ set autoindent
 set smartindent
 imap <C-Return> <CR><CR><C-o>k<Tab>
 
-"Expand return functionality with DelimitMate
-"Prevent <> autoclosing to prevent clashing with vim-closetag
-let delimitMate_expand_cr=1
-let delimitMate_matchpairs = "(:),[:],{:}"
-
 "Install solarized theme
 syntax enable 
 let g:solarized_visibility = "high"
@@ -36,6 +31,11 @@ set background=dark
 "Run pathogen package manager for VIM plugins
 execute pathogen#infect()
 
+"Expand return functionality with DelimitMate
+"Prevent <> autoclosing to prevent clashing with vim-closetag
+let delimitMate_expand_cr=1
+let delimitMate_matchpairs = "(:),[:],{:}"
+
 "Display vim-airline
 set laststatus=2
 set ttimeoutlen=50
@@ -45,7 +45,7 @@ let g:airline_powerline_fonts=1
 "Enable omnicomplete and set ctrl+space key binding
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
-imap <c-space> <c-x><c-o>
+imap aa <c-x><c-o>
 
 "Enable syntax highlighting for JSDocs
 let g:javascript_plugin_jsdoc = 1
@@ -61,3 +61,9 @@ set updatetime=250
 
 "Key bindings for ":Unite file" to <Leader>f
 nnoremap <Leader>f :Unite file<CR>
+
+"Bind <Leader>m to :MRU
+nnoremap <Leader>m :MRU<CR>
+
+"Remap Emmet to <C-e>
+imap <c-e> <C-Y>,
