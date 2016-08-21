@@ -21,7 +21,9 @@ set smartindent
 imap <C-Return> <CR><CR><C-o>k<Tab>
 
 "Expand return functionality with DelimitMate
+"Prevent <> autoclosing to prevent clashing with vim-closetag
 let delimitMate_expand_cr=1
+let delimitMate_matchpairs = "(:),[:],{:}"
 
 "Install solarized theme
 syntax enable 
@@ -52,3 +54,6 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
 
 "Set NERDTree Toggle keymapping
 map <C-n> :NERDTreeToggle<CR>
+
+"Reduce gitgutter's update time
+set updatetime=250
