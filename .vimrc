@@ -35,7 +35,8 @@ set ttimeoutlen=50
 let g:airline_powerline_fonts=1
 
 "Enable HTML Autocompletion
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
 "Closetag plugin options
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
