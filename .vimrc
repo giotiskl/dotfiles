@@ -24,6 +24,7 @@ let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 let g:solarized_termcolors = 16
 colorscheme solarized
+set background=dark
 
 "Run pathogen package manager for VIM plugins
 execute pathogen#infect()
@@ -37,6 +38,9 @@ let g:airline_powerline_fonts=1
 "Enable HTML Autocompletion
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+
+"Enable syntax highlighting for JSDocs
+let g:javascript_plugin_jsdoc = 1
 
 "Closetag plugin options
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
