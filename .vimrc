@@ -16,7 +16,12 @@ set shiftwidth=2
 
 "Indent files
 filetype indent on
+set autoindent
 set smartindent
+imap <C-Return> <CR><CR><C-o>k<Tab>
+
+"Expand return functionality with DelimitMate
+let delimitMate_expand_cr=1
 
 "Install solarized theme
 syntax enable 
