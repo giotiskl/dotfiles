@@ -91,6 +91,3 @@ nnoremap <C-P> :FZF<CR>
 
 "DevIcons fix spacing
 let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
-
-"Set indentation for .jsx files
-au FileType javascript.jsx setlocal sw=2 sts=2 et
