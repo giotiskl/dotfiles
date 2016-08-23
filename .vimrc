@@ -1,5 +1,4 @@
-"Set font
-set encoding=utf8
+"Nerd overriden Inconsolata font for DevIcons support
 set guifont=Inconsolata\ for\ Powerline\ Nerd\ Font\ Complete:h16
 
 "Add key bindings
@@ -14,6 +13,12 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
+"Highlight search results and ignore case by default
+set hlsearch
+set ignorecase
+"Map ESC to clear last search
+"nnoremap <silent> <esc> :noh<cr><esc>
+
 "Set breakindent on by default
 set breakindent
 set showbreak=.. 
@@ -23,14 +28,6 @@ filetype indent on
 set autoindent
 set smartindent
 imap <C-Return> <CR><CR><C-o>k<Tab>
-
-"Install solarized theme
-"syntax enable 
-"let g:solarized_visibility = "high"
-"let g:solarized_contrast = "high"
-"let g:solarized_termcolors = 16
-"colorscheme solarized
-"set background=dark
 
 "Install Atom-like Dark One theme
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -74,7 +71,7 @@ imap aa <c-x><c-o>
 let g:javascript_plugin_jsdoc = 1
 
 "Closetag plugin options
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb"
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"
 
 "Set NERDTree Toggle keymapping
 map <C-n> :NERDTreeToggle<CR>
@@ -82,33 +79,18 @@ map <C-n> :NERDTreeToggle<CR>
 "Reduce gitgutter's update time
 set updatetime=250
 
-"Key bindings for ":Unite file" to <Leader>f
-"nnoremap <Leader>f :Unite file<CR>
-
 "Bind <Leader>m to :MRU
 nnoremap <Leader>m :MRU<CR>
 
 "Remap Emmet to <C-e>
 imap <c-e> <C-Y>,
 
-"Add :Unite specific key bindings
-"First to open in different modes
-nnoremap <C-P>    :Unite -buffer-name=files -start-insert file_rec/async:!<cr>
-nnoremap <space>/ :Unite -no-empty -no-resize grep<cr>
-nnoremap <space>s :Unite -quick-match buffer<cr>
-"Then for navigation inside Unite window
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  imap <buffer> <C-j> <Plug>(unite_select_next_line)
-  imap <buffer> <C-k> <Plug>(unite_select_previous_line)
-  nmap <silent><buffer><expr> Enter unite#do_action('switch')
-  nmap <silent><buffer><expr> <C-t> unite#do_action('tabswitch')
-  nmap <silent><buffer><expr> <C-s> unite#do_action('splitswitch')
-  nmap <silent><buffer><expr> <C-i> unite#do_action('vsplitswitch')
-  imap <silent><buffer><expr> Enter unite#do_action('switch')
-  imap <silent><buffer><expr> <C-t> unite#do_action('tabswitch')
-  imap <silent><buffer><expr> <C-s> unite#do_action('splitswitch')
-  imap <silent><buffer><expr> <C-i> unite#do_action('vsplitswitch')
-  map <buffer> <C-p> <Plug>(unite_toggle_auto_preview)
-  nnoremap <ESC> :UniteClose<cr>
-endfunction
+"Configure Fuzzyfinder
+set rtp+=~/.fzf
+nnoremap <C-P> :FZF<CR>
+
+"DevIcons fix spacing
+let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+
+"Set indentation for .jsx files
+au FileType javascript.jsx setlocal sw=2 sts=2 et

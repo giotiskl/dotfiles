@@ -1,8 +1,17 @@
 // UPDATE MY VIM PLUGINS
 for i in ~/.vim/bundle/*; do git -C $i pull; done
 
+
 // UPDATE MY VIM_CONFIG REPO
 rm -rf ~/personal_projects/vim_config/.vim/
 rm ~/personal_projects/vim_config/.vimrc
 cp -r ~/.vim/ ~/personal_projects/vim_config/.vim/
 cp ~/.vimrc ~/personal_projects/vim_config/
+
+
+// INSTALL FUZZYFINDER
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+// UPGRADE FUZZYFINDER
+cd ~/.fzf && git pull && ./install
