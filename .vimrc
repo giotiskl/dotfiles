@@ -1,6 +1,13 @@
 "Nerd overriden Inconsolata font for DevIcons support
 set guifont=Inconsolata\ for\ Powerline\ Nerd\ Font\ Complete:h16
 
+if &term =~ '256color'
+" disable Background Color Erase (BCE) so that color schemes
+" render properly when inside 256-color tmux and GNU screen.
+" see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+set t_ut=
+endif
+
 "Add key bindings
 "jj for ESCAPE
 imap jj <Esc>
