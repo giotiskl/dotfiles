@@ -4,6 +4,10 @@ for i in ~/.vim/bundle/*; do git -C $i pull; done
 // UPDATE .VIMRC
 cp ~/.vimrc ~/.personal_projects/vim_config/
 
+// INSTALL PATHOGEN (for plugin management)
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
 // INSTALL PLUGINS
 cd ~/.vim/bundle
 git clone https://github.com/scrooloose/nerdtree.git
@@ -32,6 +36,7 @@ git clone https://github.com/mhinz/vim-startify.git
 git clone https://github.com/tomtom/tlib_vim.git
 git clone https://github.com/severin-lemaignan/vim-minimap.git
 git clone https://github.com/Shougo/vimproc.vim.git
+git clone https://github.com/junegunn/fzf.vim.git
 
 -> to complete YCM installation run: ./install.py --all (in its dir)
 
@@ -41,3 +46,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 // UPGRADE FUZZYFINDER
 cd ~/.fzf && git pull && ./install
+
+// INSTALL ONEDARK THEME
+cd ~/.vim
