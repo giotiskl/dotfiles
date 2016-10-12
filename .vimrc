@@ -24,7 +24,7 @@ set shiftwidth=2
 set hlsearch
 set ignorecase
 "Map ESC to clear last search
-"nnoremap <silent> <esc> :noh<cr><esc>
+nnoremap <esc> :noh<return><esc>
 
 "Set breakindent on by default
 set breakindent

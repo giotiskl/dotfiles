@@ -10,6 +10,7 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 // INSTALL PLUGINS
 cd ~/.vim/bundle
+git clone https://github.com/gko/vim-coloresque.git
 git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/jistr/vim-nerdtree-tabs.git
