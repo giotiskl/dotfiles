@@ -38,6 +38,7 @@ git clone https://github.com/tomtom/tlib_vim.git
 git clone https://github.com/severin-lemaignan/vim-minimap.git
 git clone https://github.com/Shougo/vimproc.vim.git
 git clone https://github.com/junegunn/fzf.vim.git
+git clone https://github.com/heavenshell/vim-jsdoc.git
 
 -> to complete YCM installation run: ./install.py --all (in its dir)
 
