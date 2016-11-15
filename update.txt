@@ -20,7 +20,6 @@ git clone https://github.com/mattn/emmet-vim.git
 git clone https://github.com/Raimondi/delimitMate.git
 git clone https://github.com/Yggdroot/indentLine.git
 git clone https://github.com/airblade/vim-gitgutter.git
-git clone https://github.com/ternjs/tern_for_vim.git
 git clone https://github.com/plasticboy/vim-markdown.git
 git clone https://github.com/vim-scripts/VIM-Color-Picker.git
 git clone https://github.com/alvan/vim-closetag.git
@@ -39,6 +38,9 @@ git clone https://github.com/severin-lemaignan/vim-minimap.git
 git clone https://github.com/Shougo/vimproc.vim.git
 git clone https://github.com/junegunn/fzf.vim.git
 git clone https://github.com/heavenshell/vim-jsdoc.git
+git clone https://github.com/majutsushi/tagbar.git
+
+—> to use Tagbar Vim Plugin Exuberant Ctags must be installed -> brew install ctags
 
 -> to complete YCM installation run: ./install.py --all (in its dir)
 
