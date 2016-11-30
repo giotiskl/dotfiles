@@ -2,7 +2,7 @@
 for i in ~/.vim/bundle/*; do git -C $i pull; done
 
 // UPDATE .VIMRC
-cp ~/.vimrc ~/.personal_projects/vim_config/
+cp ~/.vimrc ~/.personal_projects/vim_config/vimrc
 
 // INSTALL PATHOGEN (for plugin management)
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -39,6 +39,8 @@ git clone https://github.com/Shougo/vimproc.vim.git
 git clone https://github.com/junegunn/fzf.vim.git
 git clone https://github.com/heavenshell/vim-jsdoc.git
 git clone https://github.com/majutsushi/tagbar.git
+git clone https://github.com/ElmCast/elm-vim.git
+git clone https://github.com/avh4/elm-format.git
 
 —> to use Tagbar Vim Plugin Exuberant Ctags must be installed -> brew install ctags
 

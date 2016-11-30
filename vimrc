@@ -83,6 +83,12 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"
 "Set NERDTree Toggle keymapping
 map <C-n> :NERDTreeToggle<CR>
 
+"For ELM autoformat and add YouCompleteMe support
+let g:elm_format_autosave = 1
+let g:ycm_semantic_triggers = {
+      \ 'elm' : ['.'],
+      \}
+
 "Reduce gitgutter's update time
 set updatetime=250
 
