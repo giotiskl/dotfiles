@@ -83,12 +83,6 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"
 "Set NERDTree Toggle keymapping
 map <C-n> :NERDTreeToggle<CR>
 
-"For ELM autoformat and add YouCompleteMe support
-let g:elm_format_autosave = 1
-let g:ycm_semantic_triggers = {
-      \ 'elm' : ['.'],
-      \}
-
 "Reduce gitgutter's update time
 set updatetime=250
 
@@ -97,6 +91,12 @@ nnoremap <Leader>m :MRU<CR>
 
 "Remap Emmet to <C-e>
 imap <c-e> <C-Y>,
+"Set javascript.jsx ft to behave like jsx so as to expand to className
+let g:user_emmet_settings = {
+\  'javascript.jsx' : {
+\      'extends' : 'jsx',
+\  },
+\}
 
 "Configure Fuzzyfinder
 set rtp+=~/.fzf
@@ -104,3 +104,6 @@ nnoremap <C-P> :FZF<CR>
 
 "DevIcons fix spacing
 let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+
+"Source local .vimlocal if existing
+silent! so .vimlocal
