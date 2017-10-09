@@ -24,7 +24,7 @@ set shiftwidth=2
 set hlsearch
 set ignorecase
 "Map ESC to clear last search
-nnoremap <esc> :noh<return><esc>
+nnoremap <silent> <leader>/ :nohlsearch <cr>
 
 "Set breakindent on by default
 set breakindent
@@ -56,7 +56,7 @@ syntax on
 colorscheme onedark
 
 "Run pathogen package manager for VIM plugins
-execute pathogen#infect()
+call pathogen#infect('bundle/*')
 
 "Expand return functionality with DelimitMate
 "Prevent <> autoclosing to prevent clashing with vim-closetag
@@ -107,3 +107,14 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 
 "Source local .vimlocal if existing
 silent! so .vimlocal
+
+"Configure Syntastic to run with ESLint for JS projects
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
