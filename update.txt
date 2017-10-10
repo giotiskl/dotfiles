@@ -42,7 +42,7 @@ git clone https://github.com/majutsushi/tagbar.git
 git clone https://github.com/ElmCast/elm-vim.git
 git clone https://github.com/avh4/elm-format.git
 git clone https://github.com/Slava/vim-spacebars.git && cd ./vim-spacebars && git submodule add git://github.com/mustache/vim-mustache-handlebars.git bundle/mustache && cd ..
-git clone https://github.com/vim-syntastic/syntastic.git
+git clone https://github.com/w0rp/ale.git
 
 —> to use Tagbar Vim Plugin Exuberant Ctags must be installed -> brew install ctags
 

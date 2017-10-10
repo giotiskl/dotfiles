@@ -108,13 +108,10 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 "Source local .vimlocal if existing
 silent! so .vimlocal
 
-"Configure Syntastic to run with ESLint for JS projects
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+":ALEFix will try and fix your JS code with ESLint.
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+"Run ALE linters only on file save, not as text is typed
+"let g:ale_lint_on_save = 1
+"let g:ale_lint_on_text_changed = 0
