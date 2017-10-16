@@ -15,6 +15,9 @@ imap jj <Esc>
 "Display line numbers
 set number
 
+"Enable ttyfast for faster rendering
+set ttyfast
+
 "Set soft tab to 2 spaces
 set expandtab
 set tabstop=2
@@ -112,6 +115,7 @@ silent! so .vimlocal
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
+
 "Run ALE linters only on file save, not as text is typed
 "let g:ale_lint_on_save = 1
 "let g:ale_lint_on_text_changed = 0
