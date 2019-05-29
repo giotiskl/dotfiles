@@ -16,6 +16,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Fuzzy find support - first line should be changed depending on how you installed fzf
 set rtp+=~/.fzf
 Plugin 'junegunn/fzf.vim'
+" Add color theme
+Plugin 'joshdick/onedark.vim'
 " Add a startup screen for vim
 Plugin 'mhinz/vim-startify'
 " Most recently opened files
