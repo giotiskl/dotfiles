@@ -1,4 +1,4 @@
 #!/bin/bash
-ln -s ./.vimrc ~
-ln -s ./.zshrc ~
-ln -s ./.tmux.conf ~
+ln -s $PWD/.vimrc ~
+ln -s $PWD/.zshrc ~
+ln -s $PWD/.tmux.conf ~
