@@ -43,8 +43,8 @@ Plugin 'sheerun/vim-polyglot'
 " Markdown support
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-" Interactive command execution within vim
-Plugin 'Shougo/vimproc.vim'
+" Easy wrap in symbols ("", (), [] etc)
+Plugin 'tpope/vim-surround'
 " Autocompletion for delimiteres (e.g. (), []).
 Plugin 'Raimondi/delimitMate'
 
@@ -68,6 +68,8 @@ Plugin 'heavenshell/vim-jsdoc'
 Plugin 'alvan/vim-closetag'
 " Prettier formatting
 Plugin 'prettier/vim-prettier'
+" Omnicompletion for typescript
+Plugin 'Quramy/tsuquyomi'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
