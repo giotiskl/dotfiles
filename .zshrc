@@ -82,6 +82,9 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
+# Set vi editing mode for zsh
+set -o vi
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
