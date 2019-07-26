@@ -1,93 +1,81 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
+" Add vim-plug itself as a plugin to have docs available
+Plug 'junegunn/vim-plug'
 
 """"""""""""""""""""""""""""""""""""""""""
 " General environment                    "
 """"""""""""""""""""""""""""""""""""""""""
 " Fuzzy find support - first line should be changed depending on how you installed fzf
 set rtp+=~/.fzf
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 " Add color themes
-Plugin 'joshdick/onedark.vim'
-Plugin 'herrbischoff/cobalt2.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plug 'joshdick/onedark.vim'
+Plug 'herrbischoff/cobalt2.vim'
+Plug 'altercation/vim-colors-solarized'
 " Add a startup screen for vim
-Plugin 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 " Most recently opened files
-Plugin 'vim-scripts/mru'
+Plug 'vim-scripts/mru'
 " Add Nerdtree (a GUI file explorer)
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " Comple completion engine for Vim.
-Plugin 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim'
 " Git
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 " Easy motion
-Plugin 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 " Displays lines indentation
-Plugin 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 " Comment out code
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 " Dev icons
-Plugin 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 " Syntactic support for different languages
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 " Markdown support
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 " Easy wrap in symbols ("", (), [] etc)
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Autocompletion for delimiteres (e.g. (), []).
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 
 
 """"""""""""""""""""""""""""""""""""""""""
-" JavaScript development related plugins "
+" JavaScript development related Plugs   "
 """"""""""""""""""""""""""""""""""""""""""
-" ALE (Asynchronous Lint Engine) is a plugin for providing linting 
+" ALE (Asynchronous Lint Engine) is a Plug for providing linting 
 " (checking syntax and semantics) in NeoVim 0.2.0+ and Vim 8 
 " while you edit your text files
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 " Emmet support (syntax expansion)
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 " Display coloring for hex color codes in CSS
-Plugin 'gko/vim-coloresque'
+Plug 'gko/vim-coloresque'
 " Color picker widget
-Plugin 'KabbAmine/vCoolor.vim'
+Plug 'KabbAmine/vCoolor.vim'
 " Generate JSDoc
-Plugin 'heavenshell/vim-jsdoc'
+Plug 'heavenshell/vim-jsdoc'
 " Autoclose tags
-Plugin 'alvan/vim-closetag'
+Plug 'alvan/vim-closetag'
 " Prettier formatting
-Plugin 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier'
 " Omnicompletion for typescript
-Plugin 'Quramy/tsuquyomi'
+Plug 'Quramy/tsuquyomi'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call plug#end()
 
+""""""""""""""""""""""""""""""""""""""""""
+" Non plugin config                      "
+""""""""""""""""""""""""""""""""""""""""""
 "Nerd overriden Inconsolata font for DevIcons support
 set guifont=Inconsolata\ for\ Powerline\ Nerd\ Font\ Complete:h16
 
