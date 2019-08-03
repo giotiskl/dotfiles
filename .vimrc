@@ -25,7 +25,7 @@ Plug 'vim-scripts/mru'
 " Add Nerdtree (a GUI file explorer)
 Plug 'scrooloose/nerdtree'
 " Comple completion engine for Vim.
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Git
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
