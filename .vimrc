@@ -17,7 +17,7 @@ Plug 'junegunn/fzf.vim'
 " Add color themes
 Plug 'joshdick/onedark.vim'
 Plug 'herrbischoff/cobalt2.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 " Add a startup screen for vim
 Plug 'mhinz/vim-startify'
 " Most recently opened files
@@ -117,73 +117,59 @@ set autoindent
 set smartindent
 imap <C-Return> <CR><CR><C-o>k<Tab>
 
-"Install Atom-like Dark One theme
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-if (empty($TMUX))
-  if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
 syntax on
-" set background=dark " Used for solarized theme
+
+" Configure color scheme
+"set background=dark " Used for solarized theme
 colorscheme onedark
 
-"Expand return functionality with DelimitMate
-"Prevent <> autoclosing to prevent clashing with vim-closetag
+" Expand return functionality with DelimitMate
+" Prevent <> autoclosing to prevent clashing with vim-closetag
 let delimitMate_expand_cr=1
 let delimitMate_matchpairs = "(:),[:],{:}"
 
-"Display vim-airline
+" Display vim-airline
 set laststatus=2
 set ttimeoutlen=50
-"Use vim-airline with devicons
+" Use vim-airline with devicons
 let g:airline_powerline_fonts=1
 
-"Enable omnicomplete and set ctrl+space key binding
+" Enable omnicomplete and set ctrl+space key binding
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 imap aa <c-x><c-o>
 
-"Enable syntax highlighting for JSDocs
+" Enable syntax highlighting for JSDocs
 let g:javascript_plugin_jsdoc = 1
 
-"Closetag plugin options
+" Closetag plugin options
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js"
 
-"Set NERDTree Toggle keymapping
+" Set NERDTree Toggle keymapping
 map <C-n> :NERDTreeToggle<CR>
 
-"Reduce gitgutter's update time
+" Reduce gitgutter's update time
 set updatetime=250
 
-"Bind <Leader>m to :MRU
+" Bind <Leader>m to :MRU
 nnoremap <Leader>m :MRU<CR>
 
-"Remap Emmet to <C-e>
+" Remap Emmet to <C-e>
 imap <c-e> <C-Y>,
-"Set javascript.jsx ft to behave like jsx so as to expand to className
+" Set javascript.jsx ft to behave like jsx so as to expand to className
 let g:user_emmet_settings = {
       \  'javascript.jsx' : {
       \      'extends' : 'jsx',
       \  },
       \}
 
-"Configure Fuzzyfinder
+" Configure Fuzzyfinder
 nnoremap <C-P> :FZF<CR>
 
 " Make indent line display more beautiful indentation
 let g:indentLine_char = '│'
 
-"DevIcons fix spacing
+" DevIcons fix spacing
 let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 
 ":ALEFix will try and fix your JS code with ESLint.
