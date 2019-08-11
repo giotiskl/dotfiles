@@ -69,8 +69,6 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'alvan/vim-closetag'
 " Prettier formatting
 Plug 'prettier/vim-prettier'
-" Omnicompletion for typescript
-Plug 'Quramy/tsuquyomi'
 
 call plug#end()
 
@@ -121,7 +119,7 @@ imap <C-Return> <CR><CR><C-o>k<Tab>
 " Configure color scheme
 set background=dark
 syntax on
-colorscheme plastic
+colorscheme onedark
 
 " Expand return functionality with DelimitMate
 " Prevent <> autoclosing to prevent clashing with vim-closetag
@@ -213,10 +211,6 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
 " Use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
@@ -237,9 +231,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
