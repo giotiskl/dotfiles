@@ -18,6 +18,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'herrbischoff/cobalt2.vim'
 Plug 'lifepillar/vim-solarized8'
+Plug 'flrnprz/plastic.vim'
 " Add a startup screen for vim
 Plug 'mhinz/vim-startify'
 " Most recently opened files
@@ -117,11 +118,10 @@ set autoindent
 set smartindent
 imap <C-Return> <CR><CR><C-o>k<Tab>
 
-syntax on
-
 " Configure color scheme
-"set background=dark " Used for solarized theme
-colorscheme onedark
+set background=dark
+syntax on
+colorscheme plastic
 
 " Expand return functionality with DelimitMate
 " Prevent <> autoclosing to prevent clashing with vim-closetag
