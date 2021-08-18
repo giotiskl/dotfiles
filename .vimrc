@@ -293,3 +293,8 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 "Source local .vimlocal if existing
 silent! so .vimlocal
+
+" https://github.com/neoclide/coc.nvim/issues/856
+if $NVM_BIN != ""
+  let g:coc_node_path = '$NVM_BIN/node'
+endif
